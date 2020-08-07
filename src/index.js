@@ -1,6 +1,18 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
+import React from 'react'
 
-import App from './app'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import Join from './components/Join/Join'
+import Chat from './components/Chat/Chat'
+
+const App = () => {
+  return (
+    <Router>
+      <Route path='/' exact component={Join}></Route>
+      <Route path='/chat' component={Chat}></Route>
+    </Router>
+  )
+}
 
 ReactDOM.render(<App />, document.querySelector('#root'))
